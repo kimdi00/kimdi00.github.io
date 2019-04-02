@@ -64,13 +64,14 @@
             zonecode : data.zonecode,
             addr : fullRoadAddr
         };
-        window.postMessageToiOS(postData);
+        alert(postData);
+        //window.postMessageToiOS(postData);
       },
       width : '100%',
       height : '100%'
     }).embed(element_layer);
     element_layer.style.display = 'block';
-    initLayerPosition();
+    //initLayerPosition();
   }
   
   function initLayerPosition(){
