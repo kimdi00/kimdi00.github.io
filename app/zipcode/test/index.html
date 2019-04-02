@@ -7,7 +7,7 @@
 
 <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
 
-<div id = "layer" style = "display:block; position:absolute; overflow:hidden; z-index:1; -webkit-overflow-scrolling:touch; width: 300px; height: 500px;">
+<div id = "layer" style = "display:block; position:absolute; overflow:hidden; z-index:1; -webkit-overflow-scrolling:touch;">
 
 </div>
 
@@ -71,13 +71,13 @@
       height : '100%'
     }).embed(element_layer);
     element_layer.style.display = 'block';
-    //initLayerPosition();
+    initLayerPosition();
   }
   
   function initLayerPosition(){
     var width = (window.innerWidth || document.documentElement.clientWidth); //우편번호서비스가 들어갈 element의 width
     var height = (window.innerHeight || document.documentElement.clientHeight); //우편번호서비스가 들어갈 element의 height
-    var borderWidth = 5; //샘플에서 사용하는 border의 두께
+    var borderWidth = 0; //샘플에서 사용하는 border의 두께
     element_layer.style.width = width + 'px';
     element_layer.style.height = height + 'px';
     element_layer.style.border = borderWidth + 'px solid';
