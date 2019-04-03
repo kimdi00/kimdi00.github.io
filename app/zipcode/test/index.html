@@ -36,7 +36,9 @@
       oncomplete: function(data) {
         var fullAddr = data.address; // 최종 주소 변수
         var jibunAddr = '';
+        var userAddr = '';
         var extraAddr = ''; // 조합형 주소 변수
+        
         if(data.addressType === 'R') {
           if(data.bname !== ''){
             extraAddr += data.bname;
@@ -62,12 +64,19 @@
         if(fullRoadAddr !== ''){
           fullRoadAddr += extraRoadAddr;
         }
+        if (data.userSelectedType === 'R') {
+          userAddr = fullRoadAddr;
+        } else {
+          userAddr = jibunAddr;
+        }
+        
         var postData = {
             postcode : data.postcode,
             zonecode : data.zonecode,
             roadAddr : fullRoadAddr,
             jibunAddr : jibunAddr,
-            fullAddr : fullAddr
+            fullAddr : fullAddr,
+            userAddr : userAddr
         };
         window.top.postMessage({ func: 'address', data: postData }, '*');
       },
