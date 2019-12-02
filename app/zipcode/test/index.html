@@ -83,7 +83,7 @@
             userAddr : userAddr
         };
         //window.top.postMessage({ func: 'address', data: postData }, '*');
-        window.JOA.callApp("AAA");
+        window.JOA.callApp(JSON.stringify(postData));
       },
       width : '100%',
       height : '100%'
