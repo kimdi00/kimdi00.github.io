@@ -82,7 +82,8 @@
             fullAddr : fullAddr,
             userAddr : userAddr
         };
-        window.top.postMessage({ func: 'address', data: postData }, '*');
+        //window.top.postMessage({ func: 'address', data: postData }, '*');
+        window.JOA.callApp("AAA");
       },
       width : '100%',
       height : '100%'
